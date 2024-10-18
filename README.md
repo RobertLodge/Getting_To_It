@@ -1,4 +1,4 @@
-Wrote with MERN
+Wrote for MERN
 
 User can login to application and save games to their backlog.  User can sort games based on time to beat and use the collections to populate a prize wheel to help them decide on a game to play.
 
