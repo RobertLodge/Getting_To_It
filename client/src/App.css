@@ -1,0 +1,201 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.completedLink {
+  color: green;
+}
+
+.gComplete {
+  color: green;
+}
+
+.gUnderHour { 
+  color: rgb(30, 118, 168);
+}
+
+.gEndless {
+  color: orange;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.pAge{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  margin-bottom: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  color: #000;
+  background-color: #7511b8;
+}
+.navLinks {
+  /* gap: 10px; */
+  justify-content: space-between;
+  list-style-type: none;
+}
+  .navLinks a {
+    text-decoration: none;
+    color: rgb(250, 245, 245);
+  }
+  .navLinks li {
+    background-color: #000; /* Black background */
+  color: #fff; /* White text color */
+  border: none; /* Remove border */
+  margin-bottom: 10px;
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for height and width */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+  transform: translateY(-2px);
+  }
+
+  .navLinks:hover {
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  /* Focus effect */
+  .navLinks:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline from link */
+    color: rgba(0, 0, 0, 0.986); /* Set text color */
+}
+
+  .logo svg {
+    margin-right: 0.5em; /* Space between SVG and text */
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.logout {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 5px 5px; /* Padding for height and width */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hover effect */
+/* .logout:hover {
+  background-color: #333; 
+  transform: translateY(-2px); Slight lift effect
+} */
+
+/* Focus effect */
+.logout:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); /* Add a subtle glow */
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+table {
+  width: 100%; /* Make sure the table takes the full width */
+  border-collapse: collapse; /* Collapse borders for a cleaner look */
+}
+
+th, td {
+  border: 1px solid #ccc; /* Add a light gray border */
+  padding: 10px; /* Add some padding for better spacing */
+}
+
+th {
+  background-color: #611e1e; /* Light background for table headers */
+}
+
+tbody tr:hover {
+  background-color: #8a3116; /* Highlight row on hover for better UX */
+}
+
+.wheel-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #cf811a;
+}
+
+.wheel {
+  /* Adjust these dimensions based on your wheel */
+  width: 300px; 
+  height: 300px; 
+  margin-left: 0%;
+  border: 10px solid #7918c9; /* Example wheel styling */
+  border-radius: 50%;
+  background-color: #c98c1d; /* Background for the wheel */
+}
+
+.wheel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  pointer-events: none; /* Prevent mouse events on the overlay */
+}
+
+.wheel-button {
+  margin-top: 10%;
+  color: #007BFF;
+  background-color: #000;
+  border-color: #000;
+}
+
+.wheel-select {
+  margin-bottom: 5%;
+  color: #cf811a;
+}
+
+.wheel-title {
+  color:#7511b8;
+}
