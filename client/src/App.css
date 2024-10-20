@@ -5,20 +5,28 @@
   text-align: center;
 }
 
+.loginHeader {
+  font-size: 40px;
+}
+
+
 .completedLink {
   color: green;
 }
 
 .gComplete {
-  color: green;
+  color: rgb(2, 150, 2);
+  font-weight: bold;
 }
 
 .gUnderHour { 
-  color: rgb(30, 118, 168);
+  color: rgb(43, 145, 204);
+  font-weight: bold;
 }
 
 .gEndless {
   color: orange;
+  font-weight: bold;
 }
 
 .errorMessage {
@@ -152,19 +160,23 @@ tbody tr:hover {
 .wheel-container {
   position: relative;
   display: flex;
+  height: 100%;
+  width: 100%;
   justify-content: center;
   align-items: center;
   color: #cf811a;
+  font-size: 800px;
 }
 
 .wheel {
   /* Adjust these dimensions based on your wheel */
-  width: 300px; 
-  height: 300px; 
+  width: 500px; 
+  height: 500px; 
   margin-left: 0%;
   border: 10px solid #7918c9;
   border-radius: 50%;
   background-color: #c98c1d; /* Background for the wheel */
+  font-size: 800px;
 }
 
 .wheel-overlay {
@@ -174,20 +186,35 @@ tbody tr:hover {
   width: 100%;
   height: 100%;
   pointer-events: none; /* Prevent mouse events on the overlay */
+  font-size: 600px;
 }
 
 .wheel-button {
+  font-size: 20px;
   margin-top: 10%;
-  color: #007BFF;
+  width: 50%;
+  height: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: #a924e7;
   background-color: #000;
   border-color: #000;
 }
 
 .wheel-select {
   margin-bottom: 5%;
-  color: #cf811a;
+  height: 80%;
+  width: 80%;
+  font-size: 20px;
+  color:#e29026;
 }
 
 .wheel-title {
-  color:#7511b8;
+  font-size: 30px;
+  color:#8614d1;
+  padding-top: 80px;
+}
+
+.nextGame{
+  color: #d1881b;
 }

@@ -26,7 +26,7 @@ const DisplayOne = (props) => {
             <h2>{game.name}</h2>
             
             <p>Genre: {game.genre}</p>
-            <p>Time to Complete: {game.time_to_beat}</p>
+            <p>Time to Complete: {game.time_to_beat}hrs</p>
                 {
                     game.isCompleted ?
                     <p className="gComplete">Game is Completed</p> :

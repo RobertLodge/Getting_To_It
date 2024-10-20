@@ -37,7 +37,7 @@ const Randomizer = () => {
         const items = filteredGames.map((game) => ({
             label: game.name,
             value: game._id,
-            weight: 3 // Adjust weights if needed
+            weight: 100 // Adjust weights if needed
         }));
         setWheelItems(items);
 
@@ -61,7 +61,7 @@ const Randomizer = () => {
         if (wheel) {
             const targetIndex = Math.floor(Math.random() * wheelItems.length);
             const duration = 8000; // Duration of spin
-            wheel.spinToItem(targetIndex, duration, true, 3); // Spins to a random item
+            wheel.spinToItem(targetIndex, duration, true, 100); // Spins to a random item
         }
     };
 
@@ -105,7 +105,7 @@ const Randomizer = () => {
                 <div ref={wheelRef} className='wheel' />
             </div>
                 <button className='wheel-button' onClick={spinWheel}>Spin the Wheel!</button>
-                {chosenGame && <h2>Game You're Playing Next!: {chosenGame}</h2>}
+                {chosenGame && <h2 className='nextGame'>Game You're Playing Next!: {chosenGame}</h2>}
         </div>
     );
 };
