@@ -9,6 +9,10 @@
   font-size: 40px;
 }
 
+.content {
+  margin-top: 30%;
+}
+
 
 .completedLink {
   color: green;
