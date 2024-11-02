@@ -4,57 +4,41 @@ import axios from 'axios';
 import { userContext } from '../context/userContext';
 
 const Home = (props) => {
-    const { user, setUser } = useContext(userContext);
-    const { allGames, setAllGames } = useContext(userContext);
-    const [timeFilter, setTimeFilter] = useState('');
+    const { user, setUser, allGames, setAllGames } = useContext(userContext);
+    const [timeFilter, setTimeFilter] = useState([]);
 
     useEffect(() => {
         axios.get('http://localhost:8004/api/games', { withCredentials: true })
-            .then(res => setAllGames(res.data))
+            .then(res => {
+                const sortedGames = res.data.sort((a, b) => parseFloat(a.time_to_beat) - parseFloat(b.time_to_beat));
+                setAllGames(sortedGames);
+            })
             .catch(err => console.log(err));
     }, []);
 
     const userGames = allGames.filter(game => game.userId._id === user._id);
-
-    // Filter out completed games for the filtering process
     const nonCompletedGames = userGames.filter(game => !game.isCompleted);
 
-    // Filter games based on time_to_beat
     const filteredGames = nonCompletedGames.filter(game => {
-        if (!timeFilter) return true; // No filter applied
-        const timeToBeat = parseFloat(game.time_to_beat); // Ensure we are comparing numbers
+        if (!timeFilter) return true;
+        const timeToBeat = parseFloat(game.time_to_beat);
 
-        if (timeFilter === "Games <5hr") {
-            return timeToBeat < 5;
-        } else if (timeFilter === "Games 5-10hr") {
-            return timeToBeat >= 5 && timeToBeat <= 10;
-        } else if (timeFilter === "Games 10-15hr") {
-            return timeToBeat >= 10 && timeToBeat <= 15;
-        } else if (timeFilter === "Games 15-20hr") {
-            return timeToBeat >= 15 && timeToBeat <= 20;
-        } else if (timeFilter === "Games 20-25hr") {
-            return timeToBeat >= 20 && timeToBeat <= 25;
-        } else if (timeFilter === "Games 25-30hr") {
-            return timeToBeat >= 25 && timeToBeat <= 30;
-        } else if (timeFilter === "Games 30-35hr") {
-            return timeToBeat >= 30 && timeToBeat <= 35;
-        } else if (timeFilter === "Games 35-40hr") {
-            return timeToBeat >= 35 && timeToBeat <= 40;
-        } else if (timeFilter === "Games 40-45hr") {
-            return timeToBeat >= 40 && timeToBeat <= 45;
-        } else if (timeFilter === "Games 45-50hr") {
-            return timeToBeat >= 45 && timeToBeat <= 50;
-        } else if (timeFilter === "Games >50hr") {
-            return timeToBeat >= 50;
-        }
+        if (timeFilter === "Games <5hr") return timeToBeat < 5;
+        if (timeFilter === "Games 5-10hr") return timeToBeat >= 5 && timeToBeat <= 10;
+        if (timeFilter === "Games 10-15hr") return timeToBeat >= 10 && timeToBeat <= 15;
+        if (timeFilter === "Games 15-20hr") return timeToBeat >= 15 && timeToBeat <= 20;
+        if (timeFilter === "Games 20-25hr") return timeToBeat >= 20 && timeToBeat <= 25;
+        if (timeFilter === "Games 25-30hr") return timeToBeat >= 25 && timeToBeat <= 30;
+        if (timeFilter === "Games 30-35hr") return timeToBeat >= 30 && timeToBeat <= 35;
+        if (timeFilter === "Games 35-40hr") return timeToBeat >= 35 && timeToBeat <= 40;
+        if (timeFilter === "Games 40-45hr") return timeToBeat >= 40 && timeToBeat <= 45;
+        if (timeFilter === "Games 45-50hr") return timeToBeat >= 45 && timeToBeat <= 50;
+        if (timeFilter === "Games >50hr") return timeToBeat >= 50;
         return true;
     });
 
-    // Completed games for the separate table
     const completedGames = userGames.filter(game => game.isCompleted);
 
-
-    //Creates a total count beside each dropdown option
     const gameCounts = {
         "Games <5hr": nonCompletedGames.filter(game => parseFloat(game.time_to_beat) < 5).length,
         "Games 5-10hr": nonCompletedGames.filter(game => parseFloat(game.time_to_beat) >= 5 && parseFloat(game.time_to_beat) <= 10).length,
